@@ -1,0 +1,593 @@
+body {
+    font-size: 12px ;
+    font-family: 'Nunito', sans-serif;
+    background-color: khaki;
+}
+
+html{
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+#article img, #galerie img {/* taille des images (articles et galerie) */
+    width: 300px;
+    height: 225px;
+}
+
+figcaption {/* taille des sources (articles et galerie) */
+    font-size: 10px;
+}
+
+section {/* sections */
+    width: 100vw;
+    height: 100vh;
+    padding-bottom: 40px;
+}
+
+.titre-section {/* titres principaux des sections */
+    color: #2532B3;
+    display: flex;
+    justify-content: center;
+    font-size: 40px;
+}
+
+/*****     MENU     *********************************************/
+/* Entête contenant titre et menu burger principal */
+.btn-retour-haut {
+    text-decoration: none;
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    background-color: #ff9955;
+    border-radius: 50%;
+    box-shadow: 3px 3px 10px 1px rgba(23, 85, 23, 0.5);
+}
+
+/* Bouton burger principal */
+.barre-haut {
+    margin-left: auto;
+    height: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 1rem;
+}
+
+/* menu de navigation (barre qui reste en haut de la page) */
+.barre-nav {
+    border-bottom: 2px dashed black;
+    position: fixed;
+    z-index: 1;
+    background-color: #ff9955;
+    color: black;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+/* Le menu de navigation adaptatif */
+.nav-principale {
+    position: fixed;
+    z-index: -1;
+    width: 80vw;
+    height: 80vw;
+    border-radius: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    row-gap: 0.5rem;
+
+    padding-top: 2rem;
+
+    background-color: #ff9955;
+
+    transform-origin: bottom right;
+    transform: translateX(100%) translateY(-50%) scale(0);
+
+    transition: all 1s;
+}
+
+/* Les items de menu */
+.nav-principale a {
+    font-size: 15px;
+    text-decoration: none;
+    display: inline-block;
+    border: transparent 2px solid;
+    border-radius: 0.25rem;
+    margin-right: 2.5rem;
+    margin-left: 2.5rem;
+    padding: 0.5rem;
+    color: black;
+    transition: border 300ms, color 300ms;
+}
+
+/* Effets de survol des items de menu */
+.nav-principale a:hover {
+    border-color: aqua;
+    text-decoration: underline;
+}
+
+/* Quand le menu est en active */
+.nav-principale a:active {
+    background-color: aqua;
+    text-decoration: none;
+}
+
+/* Bouton burger pour contrôler le menu adaptatif */
+.btn-burger-nav-principale {
+    color: #c8dfc7;
+    cursor: pointer;
+    margin-left: 95vw;
+    padding-right: 2vw;
+}
+
+/* Taille des icônes */
+.icone-btn-burger-ouvrir, .icone-btn-burger-fermer {
+    font-size: 2rem;
+}
+
+.icone-btn-burger-fermer {
+    display: none;
+}
+
+/* États des différents éléments lorsque la case à cocher est cochée */
+#cc-nav-principale:checked~.nav-principale {
+    transform: translateX(30%) translateY(40%) scale(1);
+}
+
+#cc-nav-principale:checked~.btn-burger-nav-principale>.icone-btn-burger-ouvrir {
+    display: none;
+}
+
+#cc-nav-principale:checked~.btn-burger-nav-principale>.icone-btn-burger-fermer {
+    display: block;
+}
+
+.barre-nav input {
+    display: none;
+}
+
+/* Requête médias */
+@media screen and (min-width: 1100px) {
+    .barre-nav {
+        display: flex;
+        justify-content: center;
+    }
+
+    .nav-principale {
+        transform: translate(0%);
+        position: relative;
+
+        width: 100vw;
+        height: 4rem;
+
+        display: flex;
+        flex-direction: row;
+
+        column-gap: 1rem;
+        padding-top: 0;
+        padding-right: 0;
+
+        scale: unset;
+
+        transition: none;
+    }
+
+    #cc-nav-principale:checked~.nav-principale {
+        transform: none;
+    }
+
+    .btn-burger-nav-principale {
+        display: none;
+    }
+
+    main > section {
+        padding: 1rem 4rem;
+    }
+}
+
+/*****     ACCEUIL     ******************************************/
+#acceuil-item {/* repère pour le menu */
+    margin-top: -4rem;
+}
+
+#acceuil {
+    color: #2532B3;
+}
+
+h1 {/* pour le titre principal de l'acceuil */
+    font-size: 50px;
+    margin-top: 4rem;
+}
+
+#titre-anime {
+    width: 300px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 40px;
+    color: #2532B3;
+}
+
+#le {
+    animation-name: motSaute;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+}
+
+#tir {
+    animation-name: motSaute;
+    animation-duration: 3s;
+    animation-delay: 0.3s;
+    animation-iteration-count: infinite;
+}
+
+#a {
+    animation-name: motSaute;
+    animation-duration: 3s;
+    animation-delay: 0.6s;
+    animation-iteration-count: infinite;
+}
+
+#arc {
+    animation-name: motSaute;
+    animation-duration: 3s;
+    animation-delay: 0.9s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes motSaute {
+    from, to {
+        transform: translateY(0);
+    }
+
+    33% {
+        transform: translateY(5px);
+    }
+
+    66% {
+        transform: translateY(-5px);
+    }
+}
+
+#conteneur-titre-secondaire {/* les autres titres dans l'acceuil */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#gauche, #droite {
+    margin-top: 30px;
+    width: 600px;
+}
+
+#conteneur-titre-secondaire h2 {
+    font-size: 30px;
+}
+
+#conteneur-titre-secondaire h3 {
+    font-size: 20px;
+}
+
+#gauche {
+    padding-left: 20px;
+}
+
+#droite {
+    margin-right: 20px;
+    padding-right: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+/*****     INSCRIPTION     ***********************************************************/
+#inscription-item {/* repère pour le menu */
+    height: 4rem;
+}
+
+form {/* Le formulaire */
+    border: 1px solid black;
+    width: 80%;
+    height: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5px;
+    font-size: 20px;
+}
+
+fieldset {
+    background-color: #ff9955;
+    border: 1px solid black;
+}
+
+#fieldset-principal {
+    height: 80%;
+    display: flex;
+    flex-direction: row;
+}
+
+/* pour les colonnes vides */
+.form-colonne:nth-of-type(1), .form-colonne:nth-of-type(5) {
+    width: 15%;
+    background-color: #ff9147;
+}
+
+/* la colonne avec les questions de texte */
+.form-colonne:nth-of-type(2) {
+    border: none;
+    width: 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-around;
+}
+
+/* la colonne avec les réponses de texte */
+.form-colonne:nth-of-type(3) {
+    border: none;
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.form-colonne:nth-of-type(3) input {
+    width: 65%;
+}
+
+/* la colonne avec les cases à cocher */
+.form-colonne:nth-of-type(4) {
+    border: none;
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-colonne fieldset {
+    display: flex;
+    flex-direction: row;
+}
+
+#experience {
+    height: 40%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#preference {
+    height: 66%;
+}
+
+.preference-colonne label {
+    height: 30%;
+    margin-left: 20px;
+}
+
+.preference-colonne {
+    border: none;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.preference-haut {
+    padding-top: 30px;
+}
+
+.preference-bas {
+    display: flex;
+    align-items: flex-end;
+}
+
+#autre input{
+    width: 120px;
+}
+
+/* section des boutons */
+#boutons {
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1 0 80%;
+}
+
+#boutons input {
+    width: 100px;
+    height: 30px;
+}
+
+#conteneur-boutons {
+    border: none;
+    width: 400px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#boutons input:hover {
+    background-color: lightgray;
+    transition: all 0.1s;
+}
+
+/*****     TABLEAU     ****************************************/
+#tableau-item {/* repère pour le menu */
+    height: 4rem;
+}
+
+table {/* tableau */
+    border:1px solid black;
+    width: 70%;
+    height: 50%;
+    font-size: 20px;
+    border-collapse: collapse;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+caption {/* titre du tableau */
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+thead {/* en-tête du tableau */
+    background-color: darkorange;
+}
+
+td {/* pour les colonnes */
+    width: 30%;
+    padding: 0.2em;
+    border: 1px solid black;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+#premiere-rangee {/* haut de colonnes */
+    background-color: #ff9955;
+}
+
+.td-descriptif {/* énoncés des débuts de rangée */
+    background-color: #e1752d;
+    width: 10%;
+}
+
+tfoot {/* bas de tableau */
+    background-color: #ff7e47;
+}
+
+/*****     ARTICLES     *******************************************/
+#article-item {/* repère pour le menu */
+    height: 4rem;
+}
+
+.article {
+    box-sizing: border-box;
+    font-size: 15px;
+}
+
+.rangee {/* arranger les rangées */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.colonne {/* Créée des colonnes qui seront l'une à côté de l'autre */
+    width: 35%;
+}
+
+.colonne h4 {/* titre des paragraphes */
+    margin-top: 20px;
+    font-size: 30px;
+}
+
+/*****     GALERIE     **************************************/
+#galerie-item {/* repère pour le menu */
+    height: 4rem;
+}
+
+#gallerie {
+    display: flex;
+    flex-direction: row;
+    align-content: stretch;
+}
+
+.colonne-galerie {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.colonne-galerie figure {/* espacement entre le haut et le bas des images dans la galerie */
+    margin-top: 40px;
+}
+
+/*****     VIDÉOS     *******************************************/
+#videos-item {/* repère pour le menu */
+    height: 4rem;
+}
+
+#videos p {/* description des vidéos */
+    font-size: 15px;
+}
+
+#conteneur-video {/* ce qui contient la div qui contient la vidéo et sa description */
+    width: 80%;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.video-colonne {
+    height: 600px;
+}
+
+.video-colonne > div {/* ce qui contient la vidéo et sa description */
+    padding: 10px;
+    border: 3px solid #ff9955;
+    border-radius: 10px;
+    margin-top: 50px;
+}
+
+/*****     PIED DE PAGE     ********************************************/
+footer {
+    height: 225px;
+    display: flex;
+    background-color: #ff9955;
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
+dl {/* les colonnes */
+    width: 25%;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#dl-reseaux-sociaux {/* la colonne des réseaux sociaux */
+    display: flex;
+    align-items: flex-start;
+    padding-left: 100px;
+}
+
+footer a {/* les liens du footer */
+    font-size: 1em;
+    letter-spacing: 0.1em;
+}
+
+footer a, #sous-footer a {/* tous les liens du bas de page */
+    color: darkblue;
+}
+
+footer a:hover, #sous-footer a:hover {/* quand on survole avec la souris sur un lien dans le bas de page */
+    color: rgb(0, 186, 0);
+    transition: color 0.1s;
+}
+
+footer a:active, #sous-footer a:active {/* quand on clique sur un lien du bas de page  */
+    color:lime;
+}
+
+dt {/* titres des colonnes du footer */
+    font-size: 1.5em;
+}
+
+#sous-footer {/* pour l'avis de confidentialité */
+    padding-left: 15px;
+    width: 100vw;
+    font-size: 20px;
+    background-color: #ff9955;
+}

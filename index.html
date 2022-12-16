@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Edouard Patrice">
+        <meta name="description" content="Page web sur le tir à l'arc">
+        <meta name="robots" content="noindex">
+
+        <!-- l'icône du bouton pour retourner en haut de la page -->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+        <!-- pour la police externe -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+
+        <!-- pour les fichiers CSS externes -->
+        <link href="css/global.css" rel="stylesheet">
+        <link href="css/normalize.css" rel="stylesheet">
+
+        <!-- titre de la page -->
+        <title>TP2</title>
+    </head>
+    <body>
+        <!-- Entête de la page : titre -->
+        <header class="barre-haut">
+            <!-- Barre de navigation -->
+            <div class="barre-nav">
+                <!-- Case à cocher qui permet le contrôle du menu adaptatif en CSS -->
+                <input type="checkbox" id="cc-nav-principale">
+
+                <!-- Bouton 'burger' pour contrôler l'affichage du menu -->
+                <label for="cc-nav-principale" class="btn-burger-nav-principale">
+                    <span class="material-icons icone-btn-burger-ouvrir">menu</span>
+                    <span class="material-icons icone-btn-burger-fermer">close</span>
+                </label>
+                
+                <!-- Menu -->
+                <nav class="nav-principale">
+                    <a href="#acceuil-item">Acceuil</a>
+                    <a href="#inscription-item">Inscription</a>
+                    <a href="#tableau-item">Tableau</a>
+                    <a href="#article-item">Articles</a>
+                    <a href="#galerie-item">Galerie</a>
+                    <a href="#videos-item">Vidéo</a>
+                </nav>
+            </div>
+        </header>
+
+        <section id="acceuil"><!-- Acceuil -->
+            <div id="acceuil-item"></div><!-- pour le menu (acceuil) -->
+            <div id="titre-anime"><!-- titre de l'acceuil -->
+                <h1 id="le">Le</h1>
+                <h1 id="tir">Tir</h1>
+                <h1 id="a">à</h1>
+                <h1 id="arc">L'Arc</h1>
+            </div>
+            <div id="conteneur-titre-secondaire">
+                <div id="gauche"><!-- la colonne de gauche dans l'acceuil -->
+                    <h2>Collège de Maisonneuve</h2>
+                    <h3>Automne 2022</h3>
+                </div>
+                <div id="droite"><!-- ;a colonne de droite dans l'acceuil -->
+                    <h2>TP2</h2>
+                    <h2>582-1W1 - Mise en page Web</h2>
+                    <h2>Techniques d'intégration multimédia</h2>
+                    <h3>par: Edouard Patrice</h3>
+                </div>
+            </div> 
+        </section>
+
+        <section id="inscription">
+            <div id="inscription-item"></div><!-- pour le menu (inscription) -->
+            <h2 class="titre-section">Inscription</h2><!-- titre de l'inscription -->
+            <form>
+                <fieldset id="fieldset-principal"><!-- rangée du haut -->
+                    <fieldset class="form-colonne"></fieldset><!-- espace vide -->
+                    <fieldset class="form-colonne"><!-- colonne qui contient les questions de texte -->
+                        <label for="input-prenom">Prénom:</label>
+                        <label for="input-nom">Nom:</label>
+                        <label for="input-courriel">Courriel:</label>
+                        <label for="input-telephone">Téléphone:</label>
+                        <label for="input-age" id="age">Âge:</label>
+                    </fieldset>
+                    <fieldset class="form-colonne"><!-- colonne qui contient les réponses de texte -->
+                        <input id="input-prenom" type="text"><!-- input du prénom -->
+                        <input id="input-nom" type="text"><!-- input du nom -->
+                        <input id="input-courriel" type="email"><!-- input du courriel -->
+                        <input id="input-telephone" type="number"><!-- input du numéro de téléphone -->
+                        <input id="input-age" type="number" min="5" max="120"><!-- input de l'âge -->
+                    </fieldset>
+                    <fieldset class="form-colonne"><!-- colonne qui contient toutes les questions à choix de réponses -->
+                        <fieldset id="experience"><!-- question oui ou non -->
+                            <legend>Avez-vous déja tiré auparavant?</legend>
+                            <label>
+                                <input type="radio" name="choix">Oui
+                            </label>
+                            <label>
+                                <input type="radio" name="choix">Non
+                            </label>
+                        </fieldset>
+                        <fieldset id="preference"><!-- question à choix multiples -->
+                            <legend>Avez vous des préférences d'arcs?</legend>
+                            <fieldset class="preference-colonne">    
+                                <label class="preference-haut">
+                                    <input type="checkbox">Arc traditionnel
+                                </label>
+                                <label class="preference-bas">
+                                    <input type="checkbox">Arc recourbé
+                                </label>
+                            </fieldset>
+                            <fieldset class="preference-colonne">
+                                <label class="preference-haut">
+                                    <input type="checkbox">Arc à poulies
+                                </label>
+                                <label id="autre" class="preference-bas">
+                                    Autre:<input type="text">
+                                </label>
+                            </fieldset>
+                        </fieldset>
+                    </fieldset>
+                    <fieldset class="form-colonne"></fieldset><!-- espace vide -->
+                </fieldset>
+                <fieldset id="boutons"><!-- rangée qui contient les boutons -->
+                    <fieldset id="conteneur-boutons">
+                        <input type="reset" value="Vider">
+                        <input type="submit" value="Envoyer">
+                    </fieldset>    
+                </fieldset>
+            </form>
+        </section>
+
+        <section id="tableau">
+            <div id="tableau-item"></div><!-- pour le menu (tableau) -->
+            <h2 class="titre-section">Les différents type d'arc et leurs caractéristiques</h2><!-- titre principal de la section -->
+            <!-- tableau -->
+            <table class = "mon_tableau">
+                <caption>Tableau comparatif des différents types d'arcs</caption><!-- titre du tableau -->
+                <thead>
+                    <tr>
+                        <th scope="col" colspan="4">types d'arc et caractéristiques</th><!-- en-tête du tableau -->
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr id="premiere-rangee"><!-- rangée 1 -->
+                        <td class="td-descriptif">Types d'arc</td>
+                        <td>Arc traditionnel</td>
+                        <td>Arc recourbé</td>
+                        <td>Arc à poulies</td>
+                    </tr>
+                    <tr><!-- rangée 2 -->
+                        <td class="td-descriptif">Utilité principale</td>
+                        <td>activités médiévales</td>
+                        <td>jeux olympiques</td>
+                        <td>chasse</td>
+                    </tr>
+                    <tr><!-- rangée 3 -->
+                        <td class="td-descriptif">caractéristiques des arcs</td>
+                        <td>aucun équipement autre que l'arc lui-même.</td>
+                        <td>Mire, stabilisateurs et clickers fortement recommandés.</td>
+                        <td>arc puissant. avec l'équipement de l'arc recourbé, il y a un décocheur pour aider à tirer la corde.</td>
+                    </tr>
+                    <tr><!-- rangée 4-->
+                        <td class="td-descriptif">Admis aux jeux olympiques:</td>
+                        <td>Non</td>
+                        <td>Oui</td>
+                        <td>Non</td>
+                    </tr>
+                    <tr><!-- rangée 5 -->
+                        <td class="td-descriptif">particularités de l'arc pendant qu'on tire</td>
+                        <td>On tire souvent à l'instinct</td>
+                        <td>On a souvent besoin de recalibrer la mire pour mieux atteindre la cible à la prochaine flèche</td>
+                        <td>
+                            C'est difficile de tirer la corde mais on peut très bien maintenir la position pour viser, 
+                            ce qui nous permet de bien prendre notre temps pour viser. 
+                        </td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th colspan="4"><!-- bas du tableau -->
+                            Les arcs mentionnés ci-dessus peuvent convenir aux choix de tout le monde.
+                            Il est même possible d'utiliser plusieurs arcs.
+                        </th>
+                    </tr>
+                </tfoot>
+            </table>
+        </section>
+        
+        <section id="article">
+            <div id="article-item"></div><!-- pour le menu (article) -->
+            <h2 class="titre-section">Présentation du tir à l'arc</h2><!-- titre principal de la section des articles -->
+            <!-- articles -->
+            <article class="article">
+                <div class="rangee">
+                    <div class="colonne"><!-- colonne 1 -->
+                        <figure><!-- image + source de l'image -->
+                            <img class="fit-picture" src="images/image_arc.webp" alt="un archer se préparant à tirer">
+                            <figcaption>image du site officiel de l'équipe olympique du Canada</figcaption>
+                        </figure>
+                        <h4>Le tir à l'arc, c'est quoi?</h4><!-- sous-titre -->
+                        <p><!-- premier paragraphe -->
+                            Le tir à l'arc est un sport de tir de précision où l'objectif est de tirer 
+                            le plus précisément possible dans une cible placée à une certaine distance
+                            du tireur. Une personne qui fait du tir à l'arc est appellée un archer. Le tir à l'arc a eu plusieurs
+                            utilitées au cours de l'Histoire. Cette discipline a été utilisée pour la chasse et pour le combat.
+                            Même si on utilise encore le tir à l'arc de ces façons, on l'utilise aujourd'hui surtout
+                            comme discipline sportive.
+                        </p>
+                    </div>
+                    <div class="colonne"><!-- colonne 2 -->
+                        <figure><!-- image -->
+                            <img class="fit-picture" src="images/image_arc2.jpg" alt="une cible avec des flèches précisément tirées">
+                            <figcaption>image du site de tir à l'arc de Neuilly-sur-Marne</figcaption>
+                        </figure>
+                        <h4>Les différentes disciplines au tir à l'arc</h4><!-- sous-titre -->
+                        <p><!-- deuxième paragraphe -->
+                            Au tir à l'arc, il existe plusieurs disciplines différentes. Je vais vous montrer
+                            les trois plus populaires. d'abord, il y a <strong>le tir en salle</strong>. 
+                            c'est quand on tire à l'intérieur sur des cibles conventionnelles placées à certaines 
+                            distances selon l'expertise de l'archer. L'archer peut aussi décider 
+                            de tirer sur une cible plus petit si c'est trop facile pour lui. Le <strong>tir en extérieur</strong>
+                            est la même chose que le tir en salle mais en plus dur car on rajoute la difficulté du vent et des
+                            distractions extérieures. Finalement, il y a <strong>le tir 3D</strong>. Le tir 3D peut se pratiquer
+                            en intérieur comme en extérieur sauf que à la place d'utiliser une cible classique, on utilise des 
+                            faux animaux pour simuler une situations de chasse.
+                        </p> 
+                    </div>    
+                </div>
+            </article>
+        </section>
+
+        <section id="galerie">
+            <div id="galerie-item"></div><!-- pour le menu (galerie) -->
+            <h2 class="titre-section">Galerie</h2><!-- titre principal de la section de la galerie -->
+            <div class="colonne-galerie">
+                <figure><!-- image tir à l'arc 1 -->
+                    <img src="images/image_arc3.jpg" alt="point de vue d'un archer en train de viser">
+                    <figcaption>image du site du club de tir à l'arc de la ville de Lomme</figcaption><!-- source -->
+                </figure>
+
+                <figure><!-- image tir à l'arc 2 -->
+                    <img src="images/image_arc4.jpg" alt="une autre image montrant le point de vue d'un archer en train de viser">
+                    <figcaption>image du site de tri à l'arc Drummondville</figcaption><!-- source -->
+                </figure>
+
+                <figure><!-- image tir à l'arc 3 -->
+                    <img src="images/image_arc5.webp" alt="résultat d'une volée de flèches">
+                    <figcaption>image du site 37 degrés sur un article sur le tir à l'arc</figcaption><!-- source -->
+                </figure>
+            </div>           
+            <div class="colonne-galerie">
+                <figure><!-- image tir à l'arc 4 -->
+                    <img src="images/image_arc6.webp" alt="une jeune fille qui tire à l'arc">
+                    <figcaption>image du site de tir à l'arc de Sainte-Foy</figcaption><!-- source -->
+                </figure>
+
+                <figure><!-- image tir à l'arc 5 -->
+                    <img src="images/image_arc7.webp" alt="deux archers de dos qui font face à une cible">
+                    <figcaption>image du site officiel de l'équipe olympique du Canada</figcaption><!-- source -->
+                </figure>
+
+                <figure><!-- image tir à l'arc 6 -->
+                    <img src="images/image_arc8.webp" alt="un archer qui vient de déchocher sa flèche">
+                    <figcaption>image du site officiel de l'équipe olympique du Canada</figcaption><!-- source -->
+                </figure>
+            </div>
+        </section>
+
+        <section id="videos">
+            <div id="videos-item"></div><!-- pour le menu (vidéos) -->
+            <!-- vidéos -->
+            <h2 class="titre-section">Vidéos</h2><!-- titre principal de la section des vidéos -->
+            <div id="conteneur-video">
+                <div class="video-colonne"><!-- première colonne -->    
+                    <div><!-- vidéo 1 -->
+                        <iframe width="300" height="168" src="https://www.youtube.com/embed/DNtgZ774hxg" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <p>
+                            Coupe du monde de tir à l'arc en 2021.
+                        </p>
+                    </div> 
+                    <div><!-- vidéo 2 -->
+                        <iframe width="300" height="168" src="https://www.youtube.com/embed/QlVipew4oMI" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <p>
+                            Vidéo montrant comment mieux tirer.
+                        </p>
+                    </div>
+                </div>
+                <div class="video-colonne"><!-- deuxième colonne -->
+                    <div><!-- vidéo 3 -->
+                        <iframe width="300" height="168" src="https://www.youtube.com/embed/0b5EMGisPS0" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <p>
+                            Démonstration d'un tir.
+                        </p>
+                    </div>
+                    <div><!-- vidéo 4 -->
+                        <iframe width="300" height="168" src="https://www.youtube.com/embed/H18rr28NGWM" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <p>
+                            Guide d'utilisation d'un arc à poulies.
+                        </p>
+                    </div>
+                </div>    
+            </div>  
+        </section>
+
+        <a href="#" class="material-icons btn-retour-haut">arrow_upward</a><!-- bouton pour revenir en haut de la page -->
+
+        <footer>
+            <!-- pied de page -->
+            <dl>
+                <div><!-- description du collège -->
+                    <dt>Collège de Maisonneuve</dt>
+                    <dd>3800 rue Sherbrooke Est, Montréal</dd>
+                    <dd><a href="https://www.cmaisonneuve.qc.ca/">Site du collège</a></dd>
+                </div>
+            </dl>
+            <dl>
+                <div>
+                    <dt>TP2</dt><!-- description du travail + département -->
+                    <dd>Technique d'intégration multimédia</dd>
+                    <dd>Mise en page Web</dd>
+                </div>
+            </dl>
+            <dl>
+                <div>
+                    <dt>Liens importants:</dt><!-- liens importants -->
+                    <dd><a href="https://www.artademontreal.com/">Site de l'ARTAM</a></dd>
+                    <dd><a href="https://fr.wikipedia.org/wiki/Tir_%C3%A0_l%27arc">Page Wikipédia du tir à l'arc</a></dd>
+                </div>
+            </dl>
+            <dl id="dl-reseaux-sociaux"><!-- liste des réseaux sociaux --> 
+                <div>
+                    <dt>Réseaux sociaux:</dt>
+                    <dd>
+                        <a href="#">
+                            <img src="https://s2.svgbox.net/materialui.svg?ic=facebook&color=000" alt="logo facebook" width="25" height="25">
+                            Facebook
+                        </a>
+                    </dd>
+                    <dd>
+                        <a href="#">
+                            <img src="https://s2.svgbox.net/social.svg?ic=instagram&color=000" alt="logo instagram" width="25" height="25">
+                            Instagram
+                        </a>
+                    </dd>
+                    <dd>
+                        <a href="#">
+                            <img src="https://s2.svgbox.net/social.svg?ic=linkedin&color=000" alt="logo linkedin" width="25" height="25">
+                            LinkedIn
+                        </a>
+                    </dd>
+                    <dd>
+                        <a href="#">
+                            <img src="https://s2.svgbox.net/social.svg?ic=messenger&color=000" alt="logo messenger" width="25" height="25">
+                            Messenger
+                        </a>
+                    </dd>
+                    <dd>
+                        <a href="#">
+                            <img src="https://s2.svgbox.net/hero-solid.svg?ic=mail&color=000" alt="logo mail" width="25" height="25">
+                            Mail
+                        </a>
+                    </dd>
+                    <dd>
+                        <a href="#">
+                            <img src="https://s2.svgbox.net/social.svg?ic=snapchat&color=000" alt="logo snapchat" width="25" height="25">
+                            snapchat
+                        </a>
+                    </dd>
+                </div>
+            </dl>
+        </footer>
+        <div id="sous-footer"><!-- avis de confidentialité -->
+            <a href="#">Avis de confidentialité</a> | <a href="#">Privacy Notice</a>
+        </div>
+        <script src="js/script.js"></script><!-- javascript -->
+    </body>
+</html>
